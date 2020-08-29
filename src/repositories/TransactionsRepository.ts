@@ -17,9 +17,10 @@ class TransactionsRepository extends Repository<Transaction> {
         return transaction.type === 'income';
       },
     );
+
     const incomeSum = incomeFiltered.reduce(
       (sum: number, transaction: Transaction) => {
-        const income = sum + transaction.value;
+        const income = Number(sum) + Number(transaction.value);
         return income;
       },
       0,
@@ -32,7 +33,7 @@ class TransactionsRepository extends Repository<Transaction> {
     );
     const outcomeSum = outcomeFiltered.reduce(
       (sum: number, transaction: Transaction) => {
-        const outcome = sum + transaction.value;
+        const outcome = Number(sum) + Number(transaction.value);
         return outcome;
       },
       0,

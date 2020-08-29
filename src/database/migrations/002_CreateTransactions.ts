@@ -5,7 +5,7 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export default class CreateTransactions1598537013183
+export default class CreateTransactions1598537037642
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
@@ -30,7 +30,7 @@ export default class CreateTransactions1598537013183
           },
           {
             name: 'value',
-            type: 'int',
+            type: 'numeric',
           },
           {
             name: 'type',
